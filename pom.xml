@@ -26,7 +26,7 @@
           <isDownloadJUnitReports>true</isDownloadJUnitReports>
           <isDownloadLogs>true</isDownloadLogs>
           <isDownloadJTLs>false</isDownloadJTLs>
-          <stopTestIfThreshold>WARNING</stopTestIfThreshold>
+          <stopTestIfThreshold>CRITICAL</stopTestIfThreshold>
           <testName></testName>
           <properties></properties>
         </configuration>
