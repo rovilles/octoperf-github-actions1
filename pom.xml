@@ -27,7 +27,6 @@
           <isDownloadLogs>true</isDownloadLogs>
           <isDownloadJTLs>false</isDownloadJTLs>
           <stopTestIfThreshold>true</stopTestIfThreshold>
-          <isGeneratePdfReport>true</isGeneratePdfReport>
           <testName></testName>
           <properties></properties>
         </configuration>
