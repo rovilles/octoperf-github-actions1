@@ -1,0 +1,53 @@
+Skip to content
+Navigation Menu
+rovilles
+octoperf-github-actions1
+
+Type / to search
+Code
+Issues
+Pull requests
+Actions
+Projects
+Wiki
+Security
+Insights
+Settings
+OctoPerf Integration
+Update pom.xml #7
+Jobs
+Run details
+Workflow file for this run
+.github/workflows/github-actions-octoperf.yml at c219167
+name: OctoPerf Integration
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+env:
+  API_KEY: 59de8312-957c-4bda-a8dc-29802426db69
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: maven
+      - name: Run Octoperf task with Maven
+        run: mvn octoperf:execute-scenario -DAPI_KEY=$API_KEY --file pom.xml
+      - name: Upload result
+        uses: actions/upload-artifact@v4
+        with:
+          name: octoperf-result
+          path: target/**
+Update pom.xml · rovilles/octoperf-github-actions1@c219167
